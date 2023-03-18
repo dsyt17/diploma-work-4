@@ -1,5 +1,4 @@
 ### Create conda env:
-
 ```
 conda create -n your_name python=3.10
 conda env list
@@ -15,7 +14,7 @@ You need to install:
 + zlibwapi.dll
 
 ### Check GPU work
-
+**TensorFlow:**
 ```Python
 import tensorflow as tf
 print("Num GPUs Available: ", len(tf.config.list_physical_devices('GPU')))
@@ -30,6 +29,18 @@ print(device_lib.list_local_devices())
 ```Python
 tf.test.is_built_with_cuda()
 ```
+
+**PyTorch:**
+```Python
+if torch.cuda.is_available():
+    print(f"CUDA version: {torch.version.cuda}")
+    cuda_id = torch.cuda.current_device()
+    print(f"ID of current CUDA device: {torch.cuda.current_device()}")
+    print(f"Name of current CUDA device: {torch.cuda.get_device_name(cuda_id)}")
+else: 
+    print("CUDA not available")
+```
+
 
 ### Disable GPU (if u need)
 
