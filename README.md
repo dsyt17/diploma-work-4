@@ -16,18 +16,12 @@ You need to install:
 ### Check GPU work
 **TensorFlow:**
 ```Python
-import tensorflow as tf
-print("Num GPUs Available: ", len(tf.config.list_physical_devices('GPU')))
-print(tf.config.list_physical_devices('GPU'))
-```
-
-```Python
-from tensorflow.python.client import device_lib
-print(device_lib.list_local_devices())
-```
-
-```Python
-tf.test.is_built_with_cuda()
+if tf.test.is_built_with_cuda():
+    print("Num GPUs Available: ", len(tf.config.list_physical_devices('GPU')))
+    from tensorflow.python.client import device_lib
+    print(device_lib.list_local_devices())
+else: 
+    print("CUDA not available")
 ```
 
 **PyTorch:**
