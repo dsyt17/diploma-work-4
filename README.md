@@ -50,6 +50,8 @@ jupyter contrib nbextension install --user
 jupyter nbextension enable hinterland/hinterland
 ```
 
+### Remove env
 ```
-tensorboard --logdir runs
+conda env remove -n 'environment_name'
+jupyter kernelspec uninstall 'environment_name'
 ```
