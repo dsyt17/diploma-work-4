@@ -11,6 +11,7 @@ python -m ipykernel install --user --name your_name --display-name "your_name"
 You need to install:
 + cuDNN CUDA
 + tensorflow-gpu
++ pytorch with cuda: pytorch.org/get-started/locally/
 + zlibwapi.dll
 
 ### Check GPU work
