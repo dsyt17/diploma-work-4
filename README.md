@@ -11,23 +11,18 @@ python -m ipykernel install --user --name your_name --display-name "your_name"
 You need to install:
 + cuDNN CUDA
 + tensorflow-gpu
++ pytorch with cuda: pytorch.org/get-started/locally/
 + zlibwapi.dll
 
 ### Check GPU work
 **TensorFlow:**
 ```Python
-import tensorflow as tf
-print("Num GPUs Available: ", len(tf.config.list_physical_devices('GPU')))
-print(tf.config.list_physical_devices('GPU'))
-```
-
-```Python
-from tensorflow.python.client import device_lib
-print(device_lib.list_local_devices())
-```
-
-```Python
-tf.test.is_built_with_cuda()
+if tf.test.is_built_with_cuda():
+    print("Num GPUs Available: ", len(tf.config.list_physical_devices('GPU')))
+    from tensorflow.python.client import device_lib
+    print(device_lib.list_local_devices())
+else: 
+    print("CUDA not available")
 ```
 
 **PyTorch:**
@@ -56,6 +51,8 @@ jupyter contrib nbextension install --user
 jupyter nbextension enable hinterland/hinterland
 ```
 
+### Remove env
 ```
-tensorboard --logdir runs
+conda env remove -n 'environment_name'
+jupyter kernelspec uninstall 'environment_name'
 ```
