@@ -1,6 +1,7 @@
 data/
 *.h5
 *.jpg
+*.png
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
