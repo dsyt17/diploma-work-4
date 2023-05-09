@@ -1,35 +1,117 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from 'react';
 
-function App() {
-  const [count, setCount] = useState(0)
+import { saveAs } from 'file-saver';
 
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+import styles from './app.module.scss';
+import axios from './axios';
+import { baseURL } from './axios';
+
+enum options {
+    res = 'resolution',
+    color = 'colorization',
 }
 
-export default App
+const App = () => {
+    const [isLoading, setIsLoading] = React.useState(false);
+    const [image, setImage] = React.useState(null);
+    const [predictedImage, setPredictedImage] = React.useState(null);
+    const [predictedProcessedImage, setPredictedProcessedImage] = React.useState(null);
+    const [activeOption, setActiveOption] = React.useState(options.res);
+
+    function handleFileInputChange(event: any) {
+        setIsLoading(true);
+        const file = event.target.files[0];
+
+        const formData = new FormData();
+        formData.append('image', file);
+
+        axios
+            .post(`/upload?type=${activeOption}`, formData)
+            .then(response => {
+                const data = response.data;
+                setImage(data.link);
+                setPredictedImage(data.predictedLink);
+                setPredictedProcessedImage(data.predictedProcessedLink);
+                setIsLoading(false);
+            })
+            .catch(error => {
+                setIsLoading(false);
+            });
+    }
+
+    return (
+        <div className={styles.root}>
+            Выберите картинку
+            <div className={styles.options}>
+                <div
+                    className={activeOption === options.res ? styles.active : ''}
+                    onClick={() => setActiveOption(options.res)}
+                >
+                    Увеличить разрешение
+                </div>
+                <div
+                    className={activeOption === options.color ? styles.active : ''}
+                    onClick={() => setActiveOption(options.color)}
+                >
+                    Колоризация
+                </div>
+            </div>
+            {isLoading ? (
+                <h1>Loading</h1>
+            ) : (
+                <>
+                    <input
+                        type="file"
+                        onChange={handleFileInputChange}
+                        accept="image/png, image/jpeg"
+                    />
+                    <div className={styles.images}>
+                        {image && (
+                            <div className={styles.item}>
+                                <img src={baseURL + image} alt="image" />
+                                <div onClick={() => saveAs(baseURL + image, image)}>
+                                    image
+                                </div>
+                            </div>
+                        )}
+                        {predictedImage && (
+                            <div className={styles.item}>
+                                <img
+                                    src={baseURL + predictedImage}
+                                    alt="predictedImage"
+                                />
+                                <div
+                                    onClick={() =>
+                                        saveAs(baseURL + predictedImage, predictedImage)
+                                    }
+                                >
+                                    predictedImage
+                                </div>
+                            </div>
+                        )}
+                        {predictedProcessedImage && (
+                            <div className={styles.item}>
+                                <img
+                                    src={baseURL + predictedProcessedImage}
+                                    alt="predictedProcessedImage"
+                                />
+                                <div
+                                    onClick={() =>
+                                        saveAs(
+                                            baseURL + predictedProcessedImage,
+                                            predictedProcessedImage,
+                                        )
+                                    }
+                                >
+                                    predictedProcessedImage
+                                </div>
+                            </div>
+                        )}
+                    </div>
+                </>
+            )}
+        </div>
+    );
+};
+
+export default App;

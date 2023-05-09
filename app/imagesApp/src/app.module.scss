@@ -1,0 +1,38 @@
+.root {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    min-height: 100vh;
+    font-size: 1.2rem;
+}
+.images {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.item {
+    img {
+        width: 250px;
+        height: 250px;
+    }
+}
+
+.options {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    cursor: pointer;
+    box-sizing: border-box;
+    div {
+        border-bottom: 2px solid transparent;
+    }
+
+    .active {
+        border-bottom: 2px solid rgb(61, 80, 227);
+    }
+}
