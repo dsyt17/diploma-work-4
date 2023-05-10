@@ -12,18 +12,23 @@ app.use(cors())
 
 const upload = multer({ dest: 'uploads/' });
 
+// Эндпоинт для загрузки изображения
 app.post('/upload', upload.single('image'), (req, res) => {
 
+    // Определяем желаемый тип обработки изображения
     const type = req.query.type;
 
+    // Если параметр с типом не определен выдаем сообщение об ошибке 
     if (!type) {
         res.json({
             message: "Add query params: type='colorization' or 'resolution'",
         });
     }
 
+    // Получаем оригинальное название изображения
     const { originalname, path } = req.file;
 
+    // Подготавливаем новые уникальные имена
     const newName = `${Date.now() + '_' + originalname}`;
     const newPath = `uploads/${newName}`;
     const predictedName = `predicted_${newName}`;
@@ -31,14 +36,16 @@ app.post('/upload', upload.single('image'), (req, res) => {
     const predictedProcessedName = `predicted_processed_${newName}`;
     const predictedProcessedPath = `uploads/${predictedProcessedName}`;
 
+    // Переименовываем полученный файл
     fs.renameSync(path, newPath);
 
-    console.log(`File uploaded: ${originalname}`);
-
+    // Выбераем скрипт, в зависимости от параметров запроса
     const python = type === 'resolution' ? 'srgan.py' : 'colorization.py'
 
+    // Команда для запуска скрипта
     const command = `conda run -n tensorflow python ${python} ${newPath} ${predictedName} ${predictedProcessedName}`
 
+    // Запускаем скрипт и по завершении его работы отправляем пользователю ссылки на изображения
     const pythonScript = spawn(command, { shell: true });
     pythonScript.on('close', (code) => {
         res.json({
@@ -48,15 +55,21 @@ app.post('/upload', upload.single('image'), (req, res) => {
             predictedProcessedLink: predictedProcessedPath
         });
     });
-
 });
 
+// Эндпоинт для отправки изображения
 app.get('/uploads/:imageName', (req, res) => {
+
+    // Получаем название изображения
     const imageName = req.params.imageName;
+
+    // Получаем путь до него
     const imagePath = `uploads/${imageName}`;
     const options = {
         root: path.resolve()
     };
+
+    // Отправляем изображение клиенту
     res.sendFile(imagePath, options);
 });
 
