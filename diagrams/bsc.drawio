@@ -1,0 +1,95 @@
+<mxfile host="app.diagrams.net" modified="2023-05-21T13:18:17.165Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36" etag="-sB-Qk_bvRZ-CVFb3ozc" version="21.3.2" type="device">
+  <diagram name="Страница 1" id="Wl8_ZW5u4z3yMczOAUMp">
+    <mxGraphModel dx="2074" dy="1116" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="lQUhTKOzllYySHhwIkj--1" value="Финансовые цели" style="swimlane;horizontal=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="262" y="269" width="831" height="209" as="geometry" />
+        </mxCell>
+        <mxCell id="lQUhTKOzllYySHhwIkj--8" value="Уменьшение затрат на обработку" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="lQUhTKOzllYySHhwIkj--1">
+          <mxGeometry x="151" y="80.75" width="116" height="47.5" as="geometry" />
+        </mxCell>
+        <mxCell id="lQUhTKOzllYySHhwIkj--11" value="Сбор пожертвований" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="lQUhTKOzllYySHhwIkj--1">
+          <mxGeometry x="340" y="80.75" width="116" height="47.5" as="geometry" />
+        </mxCell>
+        <mxCell id="lQUhTKOzllYySHhwIkj--12" value="Доход от рекламы внутри приложения" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="lQUhTKOzllYySHhwIkj--1">
+          <mxGeometry x="529" y="80.75" width="116" height="47.5" as="geometry" />
+        </mxCell>
+        <mxCell id="lQUhTKOzllYySHhwIkj--4" value="Рыночные цели" style="swimlane;horizontal=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="262" y="478" width="831" height="209" as="geometry" />
+        </mxCell>
+        <mxCell id="lQUhTKOzllYySHhwIkj--16" value="Расширение доли рынка компьютерного зрения" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="lQUhTKOzllYySHhwIkj--4">
+          <mxGeometry x="623" y="41" width="151" height="47.5" as="geometry" />
+        </mxCell>
+        <mxCell id="lQUhTKOzllYySHhwIkj--23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;curved=1;shadow=0;" edge="1" parent="lQUhTKOzllYySHhwIkj--4" source="lQUhTKOzllYySHhwIkj--20" target="lQUhTKOzllYySHhwIkj--16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lQUhTKOzllYySHhwIkj--20" value="Формирование рынка интеллектуальной обработки изображений" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="lQUhTKOzllYySHhwIkj--4">
+          <mxGeometry x="183" y="80.75" width="151" height="47.5" as="geometry" />
+        </mxCell>
+        <mxCell id="lQUhTKOzllYySHhwIkj--5" value="Внутренние цели" style="swimlane;horizontal=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="262" y="687" width="831" height="209" as="geometry" />
+        </mxCell>
+        <mxCell id="lQUhTKOzllYySHhwIkj--6" value="Увеличение скорости обработки" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="lQUhTKOzllYySHhwIkj--5">
+          <mxGeometry x="53" y="86" width="116" height="47.5" as="geometry" />
+        </mxCell>
+        <mxCell id="lQUhTKOzllYySHhwIkj--18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;curved=1;" edge="1" parent="lQUhTKOzllYySHhwIkj--5" source="lQUhTKOzllYySHhwIkj--7" target="lQUhTKOzllYySHhwIkj--10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lQUhTKOzllYySHhwIkj--7" value="Повышение доступности легкой обработки изображений" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="lQUhTKOzllYySHhwIkj--5">
+          <mxGeometry x="381" y="120" width="152" height="47.5" as="geometry" />
+        </mxCell>
+        <mxCell id="lQUhTKOzllYySHhwIkj--10" value="Повышение интереса к работе с изображениями" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="lQUhTKOzllYySHhwIkj--5">
+          <mxGeometry x="296" y="19" width="116" height="47.5" as="geometry" />
+        </mxCell>
+        <mxCell id="lQUhTKOzllYySHhwIkj--17" value="Увеличение количества исследований в области компьютерного зрения" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="lQUhTKOzllYySHhwIkj--5">
+          <mxGeometry x="602" y="25" width="152" height="47.5" as="geometry" />
+        </mxCell>
+        <mxCell id="lQUhTKOzllYySHhwIkj--9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;curved=1;" edge="1" parent="1" source="lQUhTKOzllYySHhwIkj--6" target="lQUhTKOzllYySHhwIkj--8">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="351" y="585" />
+              <mxPoint x="445" y="585" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lQUhTKOzllYySHhwIkj--14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;curved=1;" edge="1" parent="1" source="lQUhTKOzllYySHhwIkj--10" target="lQUhTKOzllYySHhwIkj--11">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="611" y="563" />
+              <mxPoint x="676" y="563" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lQUhTKOzllYySHhwIkj--15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;curved=1;" edge="1" parent="1" source="lQUhTKOzllYySHhwIkj--10" target="lQUhTKOzllYySHhwIkj--12">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="635" y="606" />
+              <mxPoint x="847" y="606" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lQUhTKOzllYySHhwIkj--19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;curved=1;" edge="1" parent="1" source="lQUhTKOzllYySHhwIkj--17" target="lQUhTKOzllYySHhwIkj--16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lQUhTKOzllYySHhwIkj--21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;curved=1;" edge="1" parent="1" source="lQUhTKOzllYySHhwIkj--10" target="lQUhTKOzllYySHhwIkj--20">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="589" y="657" />
+              <mxPoint x="521" y="657" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lQUhTKOzllYySHhwIkj--22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;curved=1;" edge="1" parent="1" source="lQUhTKOzllYySHhwIkj--6" target="lQUhTKOzllYySHhwIkj--20">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="373" y="748" />
+              <mxPoint x="487" y="748" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
